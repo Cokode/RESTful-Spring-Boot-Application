@@ -10,4 +10,5 @@ public class CollinsApplication {
 		SpringApplication.run(CollinsApplication.class, args);
 	}
 
+
 }

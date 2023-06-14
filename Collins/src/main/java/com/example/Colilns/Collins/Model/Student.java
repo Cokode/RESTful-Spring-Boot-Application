@@ -1,5 +1,7 @@
 package com.example.Colilns.Collins.Model;
 
+import jakarta.persistence.Table;
+
 import java.time.LocalDate;
 
 public class Student {
