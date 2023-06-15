@@ -1,10 +1,22 @@
 package com.example.Colilns.Collins.Model;
 
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
-
+@Entity
+@Table
 public class Student {
+    @Id
+    @SequenceGenerator(
+            name = "student_sequence",
+            sequenceName = "student_sequence",
+            allocationSize = 1
+    )
+
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "student_sequence"
+    )
     private Long id;
     private String name;
     private String email;
@@ -54,6 +66,26 @@ public class Student {
 
     public LocalDate getDob() {
         return dob;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
     }
 
     @Override
